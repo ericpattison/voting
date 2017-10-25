@@ -53,7 +53,8 @@ namespace svc_usr
             services.AddOpenIddict(options => {
                 options.AddEntityFrameworkCoreStores<UsrDbContext>();
                 options.AddMvcBinders();
-                options.EnableTokenEndpoint("/connect/token");
+                options.EnableTokenEndpoint("/api/auth/token");
+                options.EnableUserinfoEndpoint("/api/usrinfo");
                 options.AllowPasswordFlow();
                 options.AllowRefreshTokenFlow();
                 options.SetAccessTokenLifetime(TimeSpan.FromSeconds(3600));
@@ -63,17 +64,14 @@ namespace svc_usr
                 options.AddEphemeralSigningKey();
             });
 
-            /*services.AddAuthentication()
-                .AddOAuthValidation();*/
-
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             JwtSecurityTokenHandler.DefaultOutboundClaimTypeMap.Clear();
 
-            services.AddAuthentication(
-                JwtBearerDefaults.AuthenticationScheme
-            ).AddJwtBearer(options => {
-                options.Authority = "svc-usr";
-                options.Audience = "resource_server";
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => {
+                options.Authority = "http://192.168.233.128:5000/";
+                options.Audience = "resource-server";
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = new TokenValidationParameters {
                     NameClaimType = OpenIdConnectConstants.Claims.Subject,

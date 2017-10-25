@@ -35,7 +35,7 @@ namespace svc_voting
                 opts.RequireHttpsMetadata = false;
                 opts.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuer = true,
-                    ValidIssuer = "svc-usr"
+                    ValidIssuer = "http://192.168.233.128:5000/"
                 };
             });
         }
