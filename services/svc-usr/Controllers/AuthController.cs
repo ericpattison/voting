@@ -67,6 +67,7 @@ namespace svc_usr.Controllers {
             var principal = await _signInManager.CreateUserPrincipalAsync(user);
             var ticket = new AuthenticationTicket(principal, new AuthenticationProperties(), OpenIdConnectServerDefaults.AuthenticationScheme);
             ticket.SetScopes(new[]{
+                OpenIdConnectConstants.Scopes.OfflineAccess,
                 OpenIdConnectConstants.Scopes.OpenId,
                 OpenIdConnectConstants.Scopes.Email,
                 OpenIdConnectConstants.Scopes.Profile,

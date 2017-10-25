@@ -15,6 +15,7 @@ using svc_usr.Models;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using AspNet.Security.OpenIdConnect.Primitives;
+using Microsoft.IdentityModel.Tokens;
 
 namespace svc_usr
 {
@@ -54,7 +55,12 @@ namespace svc_usr
                 options.AddMvcBinders();
                 options.EnableTokenEndpoint("/connect/token");
                 options.AllowPasswordFlow();
+                options.AllowRefreshTokenFlow();
+                options.SetAccessTokenLifetime(TimeSpan.FromSeconds(3600));
+                options.SetRefreshTokenLifetime(TimeSpan.FromDays(14));
                 options.DisableHttpsRequirement();
+                options.UseJsonWebTokens();
+                options.AddEphemeralSigningKey();
             });
 
             /*services.AddAuthentication()
@@ -63,11 +69,16 @@ namespace svc_usr
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             JwtSecurityTokenHandler.DefaultOutboundClaimTypeMap.Clear();
 
-            services.AddAuthentication(options => {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options => {
-                //options.TokenValidationParameters = this.TokenValidationParameters;
-                options.IncludeErrorDetails = true;
+            services.AddAuthentication(
+                JwtBearerDefaults.AuthenticationScheme
+            ).AddJwtBearer(options => {
+                options.Authority = "svc-usr";
+                options.Audience = "resource_server";
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters {
+                    NameClaimType = OpenIdConnectConstants.Claims.Subject,
+                    RoleClaimType = OpenIdConnectConstants.Claims.Role
+                };
             });
         }
 
