@@ -12,10 +12,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using svc_usr.Data;
 using svc_usr.Models;
+using svc_usr.Models.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using AspNet.Security.OpenIdConnect.Primitives;
 using Microsoft.IdentityModel.Tokens;
+using svc_usr.Settings;
 
 namespace svc_usr
 {
@@ -32,6 +34,8 @@ namespace svc_usr
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.Configure<Services>(Configuration.GetSection("Services"));
 
             services.AddDbContext<UsrDbContext>(options => {
                 options.UseInMemoryDatabase(nameof(UsrDbContext));
@@ -70,7 +74,7 @@ namespace svc_usr
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options => {
-                options.Authority = "http://192.168.233.128:5000/";
+                options.Authority = Configuration.GetSection("Services").GetValue("Identity", String.Empty);
                 options.Audience = "resource-server";
                 options.RequireHttpsMetadata = false;
                 options.TokenValidationParameters = new TokenValidationParameters {

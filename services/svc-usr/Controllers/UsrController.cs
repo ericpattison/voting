@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using OpenIddict.Core;
 using svc_usr.Models;
+using svc_usr.Models.Identity;
 
 namespace svc_usr.Controllers {
     [Route("api")]

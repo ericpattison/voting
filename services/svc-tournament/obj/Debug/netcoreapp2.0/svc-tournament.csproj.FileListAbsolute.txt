@@ -1,0 +1,10 @@
+/home/epattison/projects/voting/services/svc-tournament/obj/Debug/netcoreapp2.0/svc-tournament.csproj.CoreCompileInputs.cache
+/home/epattison/projects/voting/services/svc-tournament/obj/Debug/netcoreapp2.0/svc-tournament.AssemblyInfoInputs.cache
+/home/epattison/projects/voting/services/svc-tournament/obj/Debug/netcoreapp2.0/svc-tournament.AssemblyInfo.cs
+/home/epattison/projects/voting/services/svc-tournament/bin/Debug/netcoreapp2.0/svc-tournament.deps.json
+/home/epattison/projects/voting/services/svc-tournament/bin/Debug/netcoreapp2.0/svc-tournament.runtimeconfig.json
+/home/epattison/projects/voting/services/svc-tournament/bin/Debug/netcoreapp2.0/svc-tournament.runtimeconfig.dev.json
+/home/epattison/projects/voting/services/svc-tournament/bin/Debug/netcoreapp2.0/svc-tournament.dll
+/home/epattison/projects/voting/services/svc-tournament/bin/Debug/netcoreapp2.0/svc-tournament.pdb
+/home/epattison/projects/voting/services/svc-tournament/obj/Debug/netcoreapp2.0/svc-tournament.dll
+/home/epattison/projects/voting/services/svc-tournament/obj/Debug/netcoreapp2.0/svc-tournament.pdb

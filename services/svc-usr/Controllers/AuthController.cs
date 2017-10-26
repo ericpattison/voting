@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AspNet.Security.OpenIdConnect.Primitives;
 using svc_usr.Models;
+using svc_usr.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication;
 using AspNet.Security.OpenIdConnect.Server;
