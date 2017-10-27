@@ -12769,29 +12769,31 @@
     ]
   },
   "packageFolders": {
-    "/home/epattison/.nuget/packages/": {},
-    "/opt/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\epatt\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/epattison/projects/voting/services/svc-tournament/svc-tournament.csproj",
+      "projectUniqueName": "C:\\Projects\\voting\\services\\svc-tournament\\svc-tournament.csproj",
       "projectName": "svc-tournament",
-      "projectPath": "/home/epattison/projects/voting/services/svc-tournament/svc-tournament.csproj",
-      "packagesPath": "/home/epattison/.nuget/packages/",
-      "outputPath": "/home/epattison/projects/voting/services/svc-tournament/obj/",
+      "projectPath": "C:\\Projects\\voting\\services\\svc-tournament\\svc-tournament.csproj",
+      "packagesPath": "C:\\Users\\epatt\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\voting\\services\\svc-tournament\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/opt/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/epattison/projects/voting/services/svc-tournament/NuGet.config",
-        "/home/epattison/.nuget/NuGet/NuGet.Config"
+        "C:\\Projects\\voting\\services\\svc-tournament\\NuGet.Config",
+        "C:\\Users\\epatt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://www.myget.org/F/aspnet-contrib/api/v3/index.json": {}
       },
